@@ -1,0 +1,18 @@
+#검{
+    position: absolute;
+    top: 40%; left: 50% ; 
+    transform: translate(-50%, -50%);
+}
+
+#lv{
+    position: absolute;
+    top: 95%; left: 50% ; 
+    transform: translate(-50%, -50%);
+}
+
+#강화{
+    position: absolute;
+    top: 120%; left: 50% ; 
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+}
