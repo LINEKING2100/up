@@ -3,10 +3,12 @@ lv = 1
 up = 100
 d = 0
 b = 0
+qkdwl = 1
+
 
 function up_click() {
     if (m >= 100 * lv) {
-        m = m - 100 * lv
+        m = m - (100 * lv) * qkdwl
         document.getElementById("돈").innerHTML = m + "원"
 
         x = Math.floor(Math.random() * 100)
@@ -23,14 +25,25 @@ function up_click() {
             alert("강화실패")
         }
         else {
-            alert("검 파괴됨")
-            up = 100
-            d = 0
-            b = 0
-            lv = 1
-            document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>실패확률:" + d + "<br>파괴확률:" + b + "<br>" + 100 * lv + "원"
+            if (qkdwl == 1) {
+                alert("검 파괴됨")
+                up = 100
+                d = 0
+                b = 0
+                lv = 1
+                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>실패확률:" + d + "<br>파괴확률:" + b + "<br>" + 100 * lv + "원"
 
-            on_f()
+                on_f()
+            }
+            else if (qkdwl == 2) {
+                up = Math.ceil((up - up/10) * 100) / 100
+                d = Math.ceil(((100 - up) - (100 - up)/10)*100)/100
+                b = Math.ceil(((100 - up)/10)*100)/100
+                lv = lv + 1
+                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>실패확률:" + d + "<br>파괴확률:" + b + "<br>" + 100 * lv + "원"
+
+                on_f()
+            }
         }
     }
 }
@@ -52,29 +65,17 @@ function asdf_click() {
     }
 }
 
+function qkdwl_click() {
+    if (qkdwl == 1) {
+        qkdwl = 2
+    }
+    else {
+        qkdwl = 1
+    }
+}
+
 function on_f() {
-    if (lv == 1) {
-        document.getElementById("lv").innerHTML = "Lv.1 검"
-        document.getElementById("rja").src = "검.png"
-    }
-    if (lv == 2) {
-        document.getElementById("lv").innerHTML = "Lv.2 단검"
-        document.getElementById("rja").src = "단검.png"
-    }
-    if (lv == 3) {
-        document.getElementById("lv").innerHTML = "Lv.3 장검"
-        document.getElementById("rja").src = "장검.png"
-    }
-    if (lv == 4) {
-        document.getElementById("lv").innerHTML = "Lv.4 막대기"
-        document.getElementById("rja").src = "막대기.png"
-    }
-    if (lv == 5) {
-        document.getElementById("lv").innerHTML = "Lv.5 광선검"
-        document.getElementById("rja").src = "광선검.png"
-    }
-    if (lv == 6) {
-        document.getElementById("lv").innerHTML = "Lv.6 투명검"
-        document.getElementById("rja").src = ".png"
-    }
+    var swordName = ['검', '단검', '장검', '막대기', '광선검', '투명검']
+    document.getElementById("lv").innerHTML = `Lv.${lv} ${swordName[lv]}`
+    document.getElementById("rja").src = `${swordName[lv]}.png`
 }
