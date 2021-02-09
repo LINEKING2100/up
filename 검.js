@@ -50,7 +50,6 @@ function up_click() {
 
 function asdf_click() {
     if (lv > 2) {
-        m = m + 200 * lv * (lv/2)
         up = 100
         d = 0
         b = 0
