@@ -74,7 +74,28 @@ function qkdwl_click() {
 }
 
 function on_f() {
-    var swordName = ['검', '단검', '장검', '막대기', '광선검', '투명검']
-    document.getElementById("lv").innerHTML = `Lv.${lv} ${swordName[lv]}`
-    document.getElementById("rja").src = `${swordName[lv]}.png`
+    if (lv == 1) {
+        document.getElementById("lv").innerHTML = "Lv.1 검"
+        document.getElementById("rja").src = "검.png"
+    }
+    if (lv == 2) {
+        document.getElementById("lv").innerHTML = "Lv.2 단검"
+        document.getElementById("rja").src = "단검.png"
+    }
+    if (lv == 3) {
+        document.getElementById("lv").innerHTML = "Lv.3 장검"
+        document.getElementById("rja").src = "장검.png"
+    }
+    if (lv == 4) {
+        document.getElementById("lv").innerHTML = "Lv.4 막대기"
+        document.getElementById("rja").src = "막대기.png"
+    }
+    if (lv == 5) {
+        document.getElementById("lv").innerHTML = "Lv.5 광선검"
+        document.getElementById("rja").src = "광선검.png"
+    }
+    if (lv == 6) {
+        document.getElementById("lv").innerHTML = "Lv.6 투명검"
+        document.getElementById("rja").src = ".png"
+    }
 }
