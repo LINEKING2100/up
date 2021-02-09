@@ -22,7 +22,7 @@ function up_click() {
             on_f()
         }
         else if (100 - (x+1) <= d) {
-            alert("강화실패")
+            console.log("풉")
         }
         else {
             if (qkdwl == 1) {
