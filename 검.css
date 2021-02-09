@@ -16,3 +16,19 @@
     transform: translate(-50%, -50%);
     font-size: 2em;
 }
+
+#discord {
+    width: 70px;
+    height: 70px;
+
+    position: absolute;
+    top: 8%; right: 0%;
+}
+
+#LK {
+    width: 70px;
+    height: 70px;
+
+    position: absolute;
+    top: 2%; right: 0%;
+}
