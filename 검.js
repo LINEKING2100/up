@@ -97,6 +97,6 @@ function on_f() {
     }
     if (lv == 6) {
         document.getElementById("lv").innerHTML = "Lv.6 투명검"
-        document.getElementById("rja").src = ".png"
+        document.getElementById("rja").src = "투명.png"
     }
 }
