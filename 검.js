@@ -9,11 +9,12 @@ llv = 1
 바람파편 = 0
 아르테미스 = 0
 en = 1
+enen = 1
 
 function up_click() {
     if (lv < 12) {
         if (m >= 100 * lv) {
-            m = m - ((100 * lv) * (en * 1.5))
+            m = m - ((100 * lv) * (en * enen))
             document.getElementById("돈").innerHTML = m + "원"
 
             x = Math.floor(Math.random() * 10000)
@@ -23,7 +24,7 @@ function up_click() {
                 lv = lv + 1
                 up = Math.ceil((up - up/20) * 100) / 100
                 b = Math.ceil((100 - up)*100)/100
-                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
                 qkdwl = false
                 if (lv > 11) {
                     document.getElementById("확률").innerHTML = `성공확률:${up}<br>파괴확률:${b}<br>바람파편${lv - 11}개(${바람파편}개 보유중)`
@@ -52,7 +53,7 @@ function up_click() {
                 up = 100
                 b = 0
                 lv = 1
-                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
 
                 on_f()
             }
@@ -78,7 +79,7 @@ function up_click() {
                 up = 100
                 b = 0
                 lv = 1
-                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+                document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
                 on_f()
             }
         }
@@ -87,11 +88,12 @@ function up_click() {
         아르테미스 += 1
         document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
         en = 아르테미스
+        enen = 1.5
 
         up = 100
         b = 0
         lv = 1
-        document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+        document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
         on_f()
     }
     
@@ -105,7 +107,7 @@ function asdf_click() {
         up = 100
         b = 0
         lv = 1
-        document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+        document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
         document.getElementById("돈").innerHTML = m + "원"
 
         on_f()
@@ -115,7 +117,7 @@ function asdf_click() {
         up = 100
         b = 0
         lv = 1
-        document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+        document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
         document.getElementById("돈").innerHTML = m + "원"
 
         on_f()
@@ -132,7 +134,7 @@ function af_click() {
             up = upp
             b = bb
             lv = llv
-            document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * 1.5)) + "원"
+            document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
             document.getElementById("돈").innerHTML = m + "원"
 
             on_f()
