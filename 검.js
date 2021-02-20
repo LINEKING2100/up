@@ -100,7 +100,7 @@ function up_click() {
 }
 
 function asdf_click() {
-    if (lv > 2) {
+    if (lv > 2 && lv != 12) {
         qkdwl = false
 
         m = m + 200 * lv * (lv/2)
