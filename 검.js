@@ -12,7 +12,7 @@ en = 1
 enen = 1
 
 function up_click() {
-    if (lv < 12) {
+    if (lv < 13) {
         if (m >= 100 * lv) {
             m = m - ((100 * lv) * (en * enen))
             document.getElementById("돈").innerHTML = m + "원"
@@ -26,8 +26,8 @@ function up_click() {
                 b = Math.ceil((100 - up)*100)/100
                 document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
                 qkdwl = false
-                if (lv > 11) {
-                    document.getElementById("확률").innerHTML = `성공확률:${up}<br>파괴확률:${b}<br>바람파편${lv - 11}개(${바람파편}개 보유중)`
+                if (lv > 12) {
+                    document.getElementById("확률").innerHTML = `성공확률:${up}<br>파괴확률:${b}<br>바람파편${lv - 12}개(${바람파편}개 보유중)`
                     up = 50
                     b = 50
                 }
@@ -36,7 +36,7 @@ function up_click() {
             }
             else {
 
-                if (lv > 11) {
+                if (lv > 12) {
                     qkdwl = false
                     console.log("넘선네")
                 }
@@ -59,15 +59,15 @@ function up_click() {
             }
         }
     }
-    else if (lv > 11 && lv < 15) {
-        if (바람파편 > (lv - 11)) {
-            바람파편 -= lv - 11
+    else if (lv > 12 && lv < 16) {
+        if (바람파편 >= (lv - 12)) {
+            바람파편 -= lv - 12
             x = Math.floor(Math.random() * 10000)
             x = x/100
             console.log(x)
             if (x <= up) {
                 lv = lv + 1
-                document.getElementById("확률").innerHTML = `성공확률:${up}<br>파괴확률:${b}<br>바람파편${lv - 11}개(${바람파편}개 보유중)`
+                document.getElementById("확률").innerHTML = `성공확률:${up}<br>파괴확률:${b}<br>바람파편${lv - 12}개(${바람파편}개 보유중)`
                 on_f()
             }
             else {
@@ -84,7 +84,7 @@ function up_click() {
             }
         }
     }
-    else if (lv == 15) {
+    else if (lv == 16) {
         아르테미스 += 1
         document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
         en = 아르테미스
@@ -100,7 +100,7 @@ function up_click() {
 }
 
 function asdf_click() {
-    if (lv > 2 && lv != 12) {
+    if (lv > 1 && lv != 13) {
         qkdwl = false
 
         m = m + 200 * lv * (lv/2)
@@ -112,7 +112,7 @@ function asdf_click() {
 
         on_f()
     }
-    else if (lv == 12) {
+    else if (lv == 13) {
         바람파편 += 1
         up = 100
         b = 0
@@ -123,7 +123,7 @@ function asdf_click() {
         on_f()
     }
     else{
-        alert("검은 3렙 이상부터 판매할수 있습니다.")
+        alert("검은 2렙 이상부터 판매할수 있습니다.")
     }
 }
 
@@ -193,23 +193,27 @@ function on_f() {
         document.getElementById("rja").src = "모자이크된검.png"
     }
     if (lv == 12) {
+        document.getElementById("lv").innerHTML = "Lv.12 나무검"
+        document.getElementById("rja").src = "나무검.png"
+    }
+    if (lv == 13) {
         document.getElementById("lv").innerHTML = "바람[바람의 상처]"
         document.getElementById("판매").innerHTML = '분해'
         document.getElementById("rja").src = "바람의 상처.png"
     }
-    if (lv == 13) {
+    if (lv == 14) {
         document.getElementById("lv").innerHTML = "불[마창 이그너스]"
         document.getElementById("판매").innerHTML = '판매'
         document.getElementById("rja").src = "마창 이그너스.png"
     }
-    if (lv == 14) {
+    if (lv == 15) {
         document.getElementById("lv").innerHTML = "물[물의 기둥]"
         document.getElementById("rja").src = "몽 둥이.png"
     }
-    if (lv == 15) {
+    if (lv == 16) {
         document.getElementById("lv").innerHTML = "Lv.∞ 아르테미스"
         document.getElementById("rja").src = "아르테미스.png"
         document.getElementById("확률").innerHTML = "성공확률:∞<br>파괴확률:∞<br>∞원"
-        document.getElementById("엔딩").innerHTML = "[개발]<br>LINEKING2100<br><br>[제작]<br>이노다:단검,장검,광선검,모자이크검,모루이미지,판매이미지,시간석이미지,분해이미지<br>막대기:막대기<br>핫덕:소시지검,벽돌<br>소비:고구마떡검<br>검필:바람의 상처,마창 이그너스,물의 기둥<br>아르테미스"
+        document.getElementById("엔딩").innerHTML = "[개발]<br>LINEKING2100<br><br>[제작]<br>이노다:단검,장검,광선검,모자이크검,모루이미지,판매이미지,시간석이미지,분해이미지<br>막대기:막대기<br>핫덕:소시지검,벽돌<br>소비:고구마떡검<br>검필:바람의 상처,마창 이그너스,물의 기둥,아르테미스<br>spotky:나무검"
     }
 }
