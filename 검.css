@@ -6,13 +6,13 @@
 
 #lv{
     position: absolute;
-    top: 95%; left: 50% ; 
+    top: 98%; left: 50% ; 
     transform: translate(-50%, -50%);
 }
 
 #강화{
     position: absolute;
-    top: 120%; left: 50% ; 
+    top: 122%; left: 50% ; 
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
@@ -24,4 +24,9 @@
 
     position: absolute;
     top: 2%; right: 0%;
+}
+
+#엔딩 {
+    position: absolute;
+    top: 0%; right: 0%;
 }
