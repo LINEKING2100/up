@@ -1,4 +1,4 @@
-m = 5000
+
 lv = 1
 up = 100
 b = 0
@@ -6,10 +6,6 @@ qkdwl = false
 upp = 100
 bb = 0
 llv = 1
-바람파편 = 0
-아르테미스 = 0
-en = 1
-enen = 1
 window.onload = function(){
     load()
 }
@@ -233,15 +229,24 @@ function save() {
 }
 
 function load() {
-    아르테미스 = localStorage.getItem("dkfmxpaltm")
-    m = localStorage.getItem("m")
-    바람파편 = localStorage.getItem("qkfkavkvus")
-    en = localStorage.getItem("en")
-    enen = localStorage.getItem("enen")
+    if (localStorage.getItem("m") != "null") {
+        아르테미스 = localStorage.getItem("dkfmxpaltm")
+        m = localStorage.getItem("m")
+        바람파편 = localStorage.getItem("qkfkavkvus")
+        en = localStorage.getItem("en")
+        enen = localStorage.getItem("enen")
 
-    document.getElementById("돈").innerHTML = m + "원"
-    if (아르테미스 > 0) {
-        document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
+        document.getElementById("돈").innerHTML = m + "원"
+        if (아르테미스 > 0) {
+            document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
+        }
+    }
+    else {
+        바람파편 = 0
+        아르테미스 = 0
+        en = 1
+        enen = 1
+        m=5000
     }
 }
 
