@@ -229,9 +229,9 @@ function save() {
 
 function load() {
     if (localStorage.getItem("m") != "null") {
-        아르테미스 = localStorage.getItem("dkfmxpaltm")
+        아르테미스 = Number(localStorage.getItem("dkfmxpaltm"))
         m = localStorage.getItem("m")
-        바람파편 = localStorage.getItem("qkfkavkvus")
+        바람파편 = Number(localStorage.getItem("qkfkavkvus"))
         en = localStorage.getItem("en")
         enen = localStorage.getItem("enen")
 
