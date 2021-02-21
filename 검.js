@@ -1,4 +1,3 @@
-
 lv = 1
 up = 100
 b = 0
@@ -254,8 +253,8 @@ function reset() {
     localStorage.setItem("dkfmxpaltm", 0)
     localStorage.setItem("m", 5000)
     localStorage.setItem("qkfkavkvus", 0)
-    localStorage.setItem("en", 0)
-    localStorage.setItem("enen", 0)
+    localStorage.setItem("en", 1)
+    localStorage.setItem("enen", 1)
     document.getElementById("돈").innerHTML = m + "원"
     if (아르테미스 > 0) {
         document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
