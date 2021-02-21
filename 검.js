@@ -10,6 +10,9 @@ llv = 1
 아르테미스 = 0
 en = 1
 enen = 1
+window.onload = function(){
+    load()
+}
 
 function up_click() {
     if (lv < 13) {
@@ -22,7 +25,7 @@ function up_click() {
             console.log(x)
             if (x <= up) {
                 lv = lv + 1
-                up = Math.ceil((up - up/20) * 100) / 100
+                up = Math.ceil((up - up/40) * 100) / 100
                 b = Math.ceil((100 - up)*100)/100
                 document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
                 qkdwl = false
@@ -96,7 +99,7 @@ function up_click() {
         document.getElementById("확률").innerHTML = "성공확률:" + up + "<br>파괴확률:" + b + "<br>" + ((100 * lv) * (en * enen)) + "원"
         on_f()
     }
-    
+    save()
 }
 
 function asdf_click() {
@@ -125,6 +128,7 @@ function asdf_click() {
     else{
         alert("검은 2렙 이상부터 판매할수 있습니다.")
     }
+    save()
 }
 
 function af_click() {
@@ -143,14 +147,15 @@ function af_click() {
     else {
         alert("불러올 검이 없습니다.")
     }
+    save()
 }
 
 function on_f() {
     if (lv == 1) {
         document.getElementById("엔딩").innerHTML = ""
-        document.getElementById("판매").innerHTML = '판매'
         document.getElementById("lv").innerHTML = "Lv.1 검"
         document.getElementById("rja").src = "검.png"
+        document.getElementById("판매").src = '판매.png'
     }
     if (lv == 2) {
         document.getElementById("lv").innerHTML = "Lv.2 단검"
@@ -203,7 +208,7 @@ function on_f() {
     }
     if (lv == 14) {
         document.getElementById("lv").innerHTML = "불[마창 이그너스]"
-        document.getElementById("판매").innerHTML = '판매'
+        document.getElementById("판매").innerHTML = '판매.png'
         document.getElementById("rja").src = "마창 이그너스.png"
     }
     if (lv == 15) {
@@ -215,5 +220,39 @@ function on_f() {
         document.getElementById("rja").src = "아르테미스.png"
         document.getElementById("확률").innerHTML = "성공확률:∞<br>파괴확률:∞<br>∞원"
         document.getElementById("엔딩").innerHTML = "[개발]<br>LINEKING2100<br><br>[제작]<br>이노다:단검,장검,광선검,모자이크검,모루이미지,판매이미지,시간석이미지,분해이미지<br>막대기:막대기<br>핫덕:소시지검,벽돌<br>소비:고구마떡검<br>검필:바람의 상처,마창 이그너스,물의 기둥,아르테미스<br>spotky:나무검"
+    }
+    save()
+}
+
+function save() {
+    localStorage.setItem("dkfmxpaltm", 아르테미스)
+    localStorage.setItem("m", m)
+    localStorage.setItem("qkfkavkvus", 바람파편)
+    localStorage.setItem("en", en)
+    localStorage.setItem("enen", enen)
+}
+
+function load() {
+    아르테미스 = localStorage.getItem("dkfmxpaltm")
+    m = localStorage.getItem("m")
+    바람파편 = localStorage.getItem("qkfkavkvus")
+    en = localStorage.getItem("en")
+    enen = localStorage.getItem("enen")
+
+    document.getElementById("돈").innerHTML = m + "원"
+    if (아르테미스 > 0) {
+        document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
+    }
+}
+
+function reset() {
+    localStorage.setItem("dkfmxpaltm", 0)
+    localStorage.setItem("m", 5000)
+    localStorage.setItem("qkfkavkvus", 0)
+    localStorage.setItem("en", 0)
+    localStorage.setItem("enen", 0)
+    document.getElementById("돈").innerHTML = m + "원"
+    if (아르테미스 > 0) {
+        document.getElementById("아테").innerHTML = "EN(엔딩횟수):" + 아르테미스
     }
 }
