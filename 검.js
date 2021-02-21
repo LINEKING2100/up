@@ -198,7 +198,7 @@ function on_f() {
     }
     if (lv == 13) {
         document.getElementById("lv").innerHTML = "바람[바람의 상처]"
-        document.getElementById("판매").innerHTML = '분해'
+        document.getElementById("판매").src = '분해.png'
         document.getElementById("rja").src = "바람의 상처.png"
     }
     if (lv == 14) {
